@@ -2,10 +2,11 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from helper.po_utils import PageObjectUtils as utils
 
 
 class Main_functions_poo:
-    def __init__(self, driver):
+    def __init__(self, driver, utils):
         self.driver = driver
         self.__button_locator = "//button[.//*[normalize-space(text())='{}']]"
 
@@ -20,6 +21,7 @@ class Main_functions_poo:
             button_locator = WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, self.__button_locator.format(button_name)))
             )
+            utils.highlight(self.driver, button_locator)
             button_locator.click()
         except Exception as e:
             raise ValueError(f"It was an error clicking the button:{e}")
