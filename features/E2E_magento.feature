@@ -8,7 +8,7 @@ Feature: E2E magento
       | field_name       | value              |
       | First Name       | Maria              |
       | Last Name        | Lucia              |
-      | Email            | Maria1111@gmail.com |
+      | Email            | Maria11121@gmail.com |
       | Password         | @123411mk          |
       | Confirm Password | @123411mk          |
     Then Click on the following submit button Create an Account
